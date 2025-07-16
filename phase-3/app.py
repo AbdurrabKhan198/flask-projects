@@ -1,4 +1,5 @@
 from flask import Flask, render_template,request,url_for, redirect,flash
+
 from forms import RegistrationForm
 
 app = Flask(__name__)
@@ -40,6 +41,7 @@ def register():
         name = form.name.data
         email = form.email.data
         flash(f"Welcome , {name}! Your registered sucessfully","success")
+        return redirect(url_for("success"))
     return render_template("register.html", form=form)
 
 @app.route("/success")
