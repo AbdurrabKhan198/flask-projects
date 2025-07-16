@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6f8;
+            min-height: 100vh;
+        }
+        ul {
+            background-color: #00bcd4;
+            padding: 23px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        li {
+            list-style: none;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #263238;
+        }
+        main {
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #263238;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            width: 300px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 18px;
+            background: #e0f7fa;
+        }
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #00bcd4;
+            margin-bottom: 10px;
+        }
+        .card-desc {
+            font-size: 1rem;
+            color: #546e7a;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .card-link {
+            margin-top: auto;
+            color: #00bcd4;
+            text-decoration: underline;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .card-link:hover {
+            color: #263238;
+        }
+        footer {
+            background: #00bcd4;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @media (max-width: 900px) {
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to the Home Page</h1>
+        <p style="margin-bottom: 32px; color: #607d8b;">Explore our features and offerings below.</p>
+        <div class="cards-container">
+            <div class="card">
+                <img src="https://img.icons8.com/color/96/000000/home.png" alt="Home">
+                <div class="card-title">Home</div>
+                <div class="card-desc">Discover our homepage with the latest updates and news.</div>
+                <a class="card-link" href="{{ url_for('home') }}">Go to Home</a>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/color/96/000000/contacts.png" alt="Contact">
+                <div class="card-title">Contact</div>
+                <div class="card-desc">Reach out to us for support, feedback, or inquiries.</div>
+                <a class="card-link" href="{{ url_for('contact') }}">Contact Us</a>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/color/96/000000/about.png" alt="About">
+                <div class="card-title">About</div>
+                <div class="card-desc">Learn more about our company, mission, and team.</div>
+                <a class="card-link" href="{{ url_for('about') }}">About Us</a>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/color/96/000000/services.png" alt="Services">
+                <div class="card-title">Services</div>
+                <div class="card-desc">Explore the wide range of services we offer to our clients.</div>
+                <a class="card-link" href="#">View Services</a>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/color/96/000000/faq.png" alt="FAQ">
+                <div class="card-title">FAQ</div>
+                <div class="card-desc">Find answers to frequently asked questions.</div>
+                <a class="card-link" href="#">Read FAQ</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Your Company</p>
+    </footer>
+</body>
+</html>
